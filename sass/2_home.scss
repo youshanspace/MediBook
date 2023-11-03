@@ -1,0 +1,364 @@
+@import url("https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@300;400;500;600;700&display=swap");
+
+$logoColor: #6544ed;
+$menuColor: #2f004f;
+$borderColor: #bdbdbd;
+$lineColor: #dadada;
+$buttonColor: #64aafe;
+$blueColor: #0375fd;
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin hideScrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+    scrollbar-width: none;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  height: 100vh;
+  font-family: "Playpen Sans", cursive;
+  a {
+    text-decoration: none;
+  }
+  .main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    .side-menu {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      width: 230px;
+      min-height: 100%;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px;
+      background-image: linear-gradient(
+        315deg,
+        #a3aff3 0%,
+        #e8ebfc 70%,
+        #f4f8f6 100%
+      );
+      .logo {
+        padding: 20px 15px;
+        text-shadow: #a3aff3 2px 2px 2px;
+        font-size: 36px;
+        font-family: "Leckerli One", cursive;
+        color: $logoColor;
+      }
+      .menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        font-size: 16px;
+        a {
+          display: block;
+          padding: 15px;
+          font-weight: 400;
+          color: $menuColor;
+          &:hover {
+            font-weight: 700;
+            color: $logoColor;
+            i {
+              font-weight: 700;
+              color: $logoColor;
+            }
+          }
+          i {
+            margin-right: 10px;
+            color: $menuColor;
+          }
+        }
+        .bottom-menu {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: relative;
+          padding: 15px;
+          width: 100%;
+          .profile-img {
+            margin-right: 10px;
+            width: 40px;
+            height: 40px;
+            border: 1px solid $borderColor;
+            border-radius: 50%;
+            background-image: url("../images/2_profile.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+          .profile-text {
+            flex: 1;
+            color: $menuColor;
+            p {
+              font-size: 16px;
+              &:last-child {
+                font-size: 14px;
+                color: #565656;
+              }
+            }
+          }
+          .more-btn {
+            padding: 0;
+            text-align: end;
+            i {
+              margin: 0;
+              font-size: 20px;
+            }
+          }
+          .more-menu {
+            display: none;
+            position: absolute;
+            top: -145px;
+            left: 160px;
+            width: 150px;
+            border: 1px solid #b4bef5;
+            border-radius: 4px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px;
+            background: #d3d9f9;
+            z-index: 1;
+            a {
+              padding: 15px;
+              text-align: start;
+              i {
+                margin-right: 10px;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .content {
+      position: relative;
+      flex: 1;
+      overflow: auto;
+      @include hideScrollbar;
+      .intro-basis {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 0;
+        .intro-img {
+          margin-right: 20px;
+          width: 150px;
+          height: 150px;
+          border: 1px solid $borderColor;
+          border-radius: 75px;
+          background-image: url("../images/2_follower.jpg");
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        .intro-follow {
+          width: 350px;
+          button {
+            margin: 10px 0;
+            padding: 5px 10px;
+            border: 0.1px solid $buttonColor;
+            border-radius: 4px;
+            background: $buttonColor;
+            font-size: 16px;
+            font-family: inherit;
+            color: #f5f5f5;
+            cursor: pointer;
+          }
+          h3 {
+            font-size: 24px;
+          }
+        }
+      }
+      .intro-info {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 16px;
+        .intro-count {
+          width: 200px;
+          p {
+            &:last-child {
+              font-weight: 600;
+            }
+          }
+          + .intro-count {
+            border-left: 1px solid $borderColor;
+          }
+        }
+      }
+      .posts {
+        padding: 0 50px;
+        width: 100%;
+        column-count: 5;
+        column-gap: 20px;
+        .post-item {
+          padding-bottom: 5px;
+          break-inside: avoid;
+          cursor: pointer;
+          img {
+            width: 100%;
+            object-fit: cover;
+            object-position: 50% 50%;
+          }
+        }
+      }
+      .modal-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 230px;
+        bottom: 0;
+        right: 0;
+        width: calc(100vw - 230px);
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        .modal {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 900px;
+          height: 550px;
+          .modal-pic {
+            width: 550px;
+            height: 550px;
+            background: #050408;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+          .modal-info-container {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 0;
+            left: 550px;
+            padding: 0 20px;
+            width: 350px;
+            height: 550px;
+            background: #ffffff;
+            .poster {
+              color: $blueColor;
+              font-weight: 500;
+            }
+            .modal-poster-container {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin: 10px 0;
+              height: 40px;
+              .modal-poster-img-container {
+                display: flex;
+                align-items: center;
+                .modal-poster-img {
+                  width: 35px;
+                  height: 35px;
+                  border-radius: 50%;
+                  border: 1px solid $borderColor;
+                  overflow: hidden;
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                  }
+                }
+                .poster {
+                  margin-left: 10px;
+                  font-size: 12px;
+                }
+              }
+              button {
+                height: 30px;
+                padding: 0 5px;
+                border: 0.1px solid #65bd62;
+                border-radius: 4px;
+                background: #65bd62;
+                font-size: 12px;
+                font-family: inherit;
+                color: #f5f5f5;
+                cursor: pointer;
+              }
+            }
+            .post-comment-container {
+              flex: 1;
+              border-top: 1px solid $lineColor;
+              width: 310px;
+              overflow-y: auto;
+              @include hideScrollbar;
+              .post-count {
+                display: flex;
+                justify-content: space-between;
+                padding: 20px 0;
+                font-size: 12px;
+                font-weight: 600;
+                .post-time {
+                  color: $borderColor;
+                }
+              }
+              .post-comment-item {
+                font-size: 12px;
+                margin-bottom: 5px;
+                .poster {
+                  margin-right: 5px;
+                }
+                .post-comment-content {
+                  font-weight: 300;
+                  word-break: break-all;
+                  word-wrap: break-word;
+                  .hyper-link {
+                    font-weight: 300;
+                    color: $blueColor;
+                  }
+                }
+              }
+            }
+            .post-like-share-container {
+              padding: 15px 0;
+              display: flex;
+              justify-content: space-between;
+              align-content: center;
+              border-top: 1px solid $lineColor;
+              font-size: 12px;
+              i {
+                font-size: 20px;
+                color: $borderColor;
+              }
+              input {
+                outline: none;
+                border: none;
+                font-family: inherit;
+                @include placeholder {
+                  font-size: 12px;
+                  font-weight: 500;
+                  color: $borderColor;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

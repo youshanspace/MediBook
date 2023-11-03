@@ -1,0 +1,16 @@
+body,
+html {
+  margin: 0;
+  height: 100%;
+}
+
+.waterfall-container {
+  column-count: 5;
+  column-gap: 15px;
+  .img-container {
+    img {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2_home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/2_home.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="side-menu">
+        <div class="logo">MediBook</div>
+        <div class="menu">
+          <div class="upper-menu">
+            <a href=""><i class="fa-solid fa-house"></i>Home</a>
+            <a href=""><i class="fa-solid fa-magnifying-glass"></i>Search</a>
+            <a href=""><i class="fa-solid fa-user"></i>Profile</a>
+            <a href=""><i class="fa-solid fa-bookmark"></i>Saved</a>
+            <a href=""><i class="fa-solid fa-circle-plus"></i>Post</a>
+          </div>
+          <div class="bottom-menu">
+            <div class="profile-img"></div>
+            <div class="profile-text">
+              <p>Yan</p>
+              <p>@thisismyid</p>
+            </div>
+            <div class="more-btn" onclick="clickMore()">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+            <div class="more-menu">
+              <a href=""><i class="fa-solid fa-gear"></i>Setting</a>
+              <a href=""><i class="fa-solid fa-circle-question"></i>Help</a>
+              <a href="./1-1_login.html"
+                ><i class="fa-solid fa-right-from-bracket"></i>Log out</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="intro-basis">
+          <div class="intro-img"></div>
+          <div class="intro-follow">
+            <button>Follow</button>
+            <h3>Cute animals</h3>
+            <p>This is a fan page of cute animals. Welcome to follow us!</p>
+          </div>
+        </div>
+        <div class="intro-info">
+          <div class="intro-count">
+            <p>20</p>
+            <p>posts</p>
+          </div>
+          <div class="intro-count">
+            <p>2023</p>
+            <p>followers</p>
+          </div>
+          <div class="intro-count">
+            <p>100</p>
+            <p>following</p>
+          </div>
+        </div>
+        <div class="posts">
+          <div class="post-item" onclick="clickShowPost(this)">
+            <img src="../images/2_img/1.jpg" />
+          </div>
+          <div class="post-item" onclick="clickShowPost(this)">
+            <img src="../images/2_img/2.jpg" />
+          </div>
+          <div class="post-item" onclick="clickShowPost(this)">
+            <img src="../images/2_img/3.jpg" />
+          </div>
+          <div class="post-item" onclick="clickShowPost(this)">
+            <img src="../images/2_img/4.jpg" />
+          </div>
+          <div class="post-item" onclick="clickShowPost(this)">
+            <img src="../images/2_img/5.jpg" />
+          </div>
+          <div class="post-item" onclick="clickShowPost(this)">
+            <img src="../images/2_img/6.jpg" />
+          </div>
+          <div class="post-item" onclick="clickShowPost(this)">
+            <img src="../images/2_img/7.jpg" />
+          </div>
+          <div class="post-item" onclick="clickShowPost(this)">
+            <img src="../images/2_img/8.jpg" />
+          </div>
+          <div class="post-item" onclick="clickShowPost(this)">
+            <img src="../images/2_img/9.jpg" />
+          </div>
+          <div class="post-item" onclick="clickShowPost(this)">
+            <img src="../images/2_img/10.jpg" />
+          </div>
+          <div class="post-item" onclick="clickShowPost(this)">
+            <img src="../images/2_img/11.jpg" />
+          </div>
+          <div class="post-item" onclick="clickShowPost(this)">
+            <img src="../images/2_img/12.jpg" />
+          </div>
+          <div class="post-item" onclick="clickShowPost(this)">
+            <img src="../images/2_img/13.jpg" />
+          </div>
+          <div class="post-item" onclick="clickShowPost(this)">
+            <img src="../images/2_img/14.jpg" />
+          </div>
+          <div class="post-item" onclick="clickShowPost(this)">
+            <img src="../images/2_img/15.jpg" />
+          </div>
+          <div class="post-item" onclick="clickShowPost(this)">
+            <img src="../images/2_img/16.jpg" />
+          </div>
+          <div class="post-item" onclick="clickShowPost(this)">
+            <img src="../images/2_img/17.jpg" />
+          </div>
+          <div class="post-item" onclick="clickShowPost(this)">
+            <img src="../images/2_img/18.jpg" />
+          </div>
+          <div class="post-item" onclick="clickShowPost(this)">
+            <img src="../images/2_img/19.jpg" />
+          </div>
+          <div class="post-item" onclick="clickShowPost(this)">
+            <img src="../images/2_img/20.jpg" />
+          </div>
+        </div>
+        <div class="modal-container">
+          <div class="modal">
+            <div class="modal-pic">
+              <img src="" alt="" />
+            </div>
+            <div class="modal-info-container">
+              <div class="modal-poster-container">
+                <div class="modal-poster-img-container">
+                  <div class="modal-poster-img">
+                    <img src="./images/3_profile.jpg" alt="" />
+                  </div>
+                  <a href="" class="poster">Flower_lover</a>
+                </div>
+                <button>Following</button>
+              </div>
+              <div class="post-comment-container">
+                <div class="post-count">
+                  <div>1,000 Likes</div>
+                  <div class="post-time">2023.1.1</div>
+                </div>
+                <div class="post-comment-item">
+                  <a href="" class="poster">Flower_lover</a>
+                  <span class="post-comment-content"
+                    >Nice work in progress by
+                    <a href="" class="hyper-link">@Cute_animals</a> in Portland
+                    - Great to see him doing wall work!</span
+                  >
+                </div>
+                <div class="post-comment-item">
+                  <a href="" class="poster">jake_oleary</a>
+                  <span class="post-comment-content">
+                    <a href="" class="hyper-link">@natalle___archer</a></span
+                  >
+                </div>
+                <div class="post-comment-item">
+                  <a href="" class="poster">t_kassia</a>
+                  <span class="post-comment-content">Wow!</span>
+                </div>
+                <div class="post-comment-item">
+                  <a href="" class="poster">ittays</a>
+                  <span class="post-comment-content">😍😍😍😍😍</span>
+                </div>
+                <div class="post-comment-item">
+                  <a href="" class="poster">75giokj</a>
+                  <span class="post-comment-content">Cooooooooooool~~~</span>
+                </div>
+                <div class="post-comment-item">
+                  <a href="" class="poster">preh.streetart</a>
+                  <span class="post-comment-content">Nice👏🏻👏🏻!!</span>
+                </div>
+                <div class="post-comment-item">
+                  <a href="" class="poster">animal_meme</a>
+                  <span class="post-comment-content">💕💕💕</span>
+                </div>
+              </div>
+              <div class="post-like-share-container">
+                <div class="like-comment">
+                  <a href="">
+                    <i class="fa-solid fa-heart"></i>
+                  </a>
+                  <input type="text" placeholder="Add a comment..." />
+                </div>
+                <div class="comment-more">
+                  <i class="fa-solid fa-ellipsis"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function clickMore() {
+        document.querySelector(".more-menu").style.display = "block";
+      }
+      function clickShowPost(e) {
+        let postItem = e;
+        let imgUrl = postItem.querySelector("img").getAttribute("src");
+        let modal = document.querySelector(".modal-container");
+        let modalImg = modal.querySelector(".modal-pic img");
+        modal.style.display = "block";
+        modalImg.src = imgUrl;
+      }
+
+      let modal = document.querySelector(".modal-container");
+      window.onclick = function (e) {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+  </body>
+</html>
